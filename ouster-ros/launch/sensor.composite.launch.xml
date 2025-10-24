@@ -27,7 +27,7 @@
     2048x10,
     4096x5
     }"/>
-  <arg name="timestamp_mode" default=""
+  <arg name="timestamp_mode" default="TIME_FROM_ROS_TIME"
     description="method used to timestamp measurements; possible values: {
     TIME_FROM_INTERNAL_OSC,
     TIME_FROM_SYNC_PULSE_IN,
@@ -58,7 +58,7 @@
     for the imu/sensor/lidar frames. Prevent the driver from broadcasting TF transforms by
     setting this parameter to False."/>
 
-  <arg name="use_system_default_qos" default="false"
+  <arg name="use_system_default_qos" default="true"
     description="Use the default system QoS settings"/>
   
   <arg name="proc_mask" default="IMG|PCL|IMU|SCAN|TLM" description="
@@ -78,9 +78,9 @@
     xyzir
     }"/>
 
-  <arg name="azimuth_window_start" default="0" description="azimuth window start;
+  <arg name="azimuth_window_start" default="120000" description="azimuth window start;
     values range [0, 360000] millidegrees"/>
-  <arg name="azimuth_window_end" default="360000" description="azimuth window end;
+  <arg name="azimuth_window_end" default="240000" description="azimuth window end;
     values range [0, 360000] millidegrees"/>
 
   <arg name="persist_config" default="false"
